@@ -38,6 +38,42 @@
 
 #### Bug Fixes
 
+- Evaluate `log_lik` of ordinal models on the log scale throughout, so
+  improbable categories no longer give `-Inf` or `NaN` where their log
+  probability is representable, and stop it failing for two categories
+  or a single draw. Thanks to Ahmed Eldeeb.
+  ([\#1192](https://github.com/paul-buerkner/brms/issues/1192))
+- Factor out the largest category in `log_softmax()`, which overflowed
+  or underflowed for large linear predictors. Thanks to Ahmed Eldeeb.
+  ([\#1951](https://github.com/paul-buerkner/brms/issues/1951))
+- Index the top category as `nthres + 1` in the Stan code of logit
+  `hurdle_cumulative` models with a predicted `disc` or
+  [`cs()`](https://paulbuerkner.com/brms/reference/cs.md) terms, which
+  stopped sampling with an index error. Thanks to Ahmed Eldeeb.
+  ([\#1952](https://github.com/paul-buerkner/brms/issues/1952))
+- Improve numerical consistency of COM-Poisson probabilities and means.
+  Refit models where the previous approximation was inaccurate.
+  ([\#1938](https://github.com/paul-buerkner/brms/issues/1938))
+- Account for censoring and truncation in COM-Poisson
+  [`log_lik()`](https://paulbuerkner.com/brms/reference/log_lik.brmsfit.md).
+  ([\#1938](https://github.com/paul-buerkner/brms/issues/1938))
+- Fix COM-Poisson CDF vectorization and support boundaries.
+  ([\#1938](https://github.com/paul-buerkner/brms/issues/1938))
+- Return `-Inf` rather than `NaN` from `log_sum_exp()` when both
+  arguments are `-Inf`, matching Stan. This also affects
+  [`nlf()`](https://paulbuerkner.com/brms/reference/brmsformula-helpers.md)
+  formulas that call it. Thanks to Ahmed Eldeeb.
+  ([\#1899](https://github.com/paul-buerkner/brms/issues/1899))
+- Evaluate the cdf and survival function of `frechet`,
+  `gen_extreme_value`, `discrete_weibull`, `asym_laplace`,
+  `inverse.gaussian`, `exgaussian` and the zero-inflated and hurdle
+  families on the log scale, so that truncated `log_lik` reaches them
+  too. Thanks to Ahmed Eldeeb.
+  ([\#1899](https://github.com/paul-buerkner/brms/issues/1899))
+- Preserve the matrix structure of factors in `newdata`, which is
+  required for matrix predictors of smooth terms such as `mrf`. Thanks
+  to Sebastian Weber.
+  ([\#1935](https://github.com/paul-buerkner/brms/issues/1935))
 - Stop rounding `posterior_predict` output to integers for discrete
   models unless `output` is `"random"`, which collapsed probabilities
   and densities to 0 or 1. Thanks to Ahmed Eldeeb.
@@ -114,6 +150,12 @@
   using affected versions were sampled under the classical
   parameterization and should be refitted.
   ([\#1927](https://github.com/paul-buerkner/brms/issues/1927))
+- Compare magnitudes when skipping unrelated levels in
+  `gr(..., cov = M)` terms with correlated coefficients, so that
+  negative entries of the covariance matrix’s Cholesky factor are no
+  longer silently discarded. This affected multivariate and random-slope
+  models using genomic or pedigree relationship matrices.
+  ([\#1939](https://github.com/paul-buerkner/brms/issues/1939))
 - Fix several other minor bugs.
 
 #### Other Changes
@@ -124,6 +166,7 @@
   models thanks to Seth Axen.
   ([\#1820](https://github.com/paul-buerkner/brms/issues/1820))
 - Improve documentation in several places.
+- Support the upcoming CmdStanR 1.0 release.
 
 ## brms 2.22.0
 

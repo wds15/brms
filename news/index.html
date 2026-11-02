@@ -24,13 +24,16 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html" aria-label="Go to homepage"><span class="fa fa-home fa-lg"></span></a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Functions</a></li>
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-other-packages" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Other Packages</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-other-packages"><li><a class="external-link dropdown-item" href="https://mc-stan.org/bayesplot">bayesplot</a></li>
     <li><a class="external-link dropdown-item" href="https://mc-stan.org/cmdstanr">cmdstanr</a></li>
+    <li><a class="external-link dropdown-item" href="https://mc-stan.org/loo">loo</a></li>
     <li><a class="external-link dropdown-item" href="https://mc-stan.org/posterior">posterior</a></li>
+    <li><a class="external-link dropdown-item" href="https://mc-stan.org/priorsense/">priorsense</a></li>
     <li><a class="external-link dropdown-item" href="https://mc-stan.org/projpred">projpred</a></li>
     <li><a class="external-link dropdown-item" href="https://mc-stan.org/rstan">rstan</a></li>
     <li><a class="external-link dropdown-item" href="https://mc-stan.org/rstanarm">rstanarm</a></li>
@@ -76,7 +79,16 @@
 </ul></div>
 <div class="section level4">
 <h4 id="bug-fixes-2-23">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-2-23"></a></h4>
-<ul><li>Stop rounding <code>posterior_predict</code> output to integers for discrete models unless <code>output</code> is <code>"random"</code>, which collapsed probabilities and densities to 0 or 1. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1923" class="external-link">#1923</a>)</li>
+<ul><li>Evaluate <code>log_lik</code> of ordinal models on the log scale throughout, so improbable categories no longer give <code>-Inf</code> or <code>NaN</code> where their log probability is representable, and stop it failing for two categories or a single draw. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1192" class="external-link">#1192</a>)</li>
+<li>Factor out the largest category in <code>log_softmax()</code>, which overflowed or underflowed for large linear predictors. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1951" class="external-link">#1951</a>)</li>
+<li>Index the top category as <code>nthres + 1</code> in the Stan code of logit <code>hurdle_cumulative</code> models with a predicted <code>disc</code> or <code><a href="../reference/cs.html">cs()</a></code> terms, which stopped sampling with an index error. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1952" class="external-link">#1952</a>)</li>
+<li>Improve numerical consistency of COM-Poisson probabilities and means. Refit models where the previous approximation was inaccurate. (<a href="https://github.com/paul-buerkner/brms/issues/1938" class="external-link">#1938</a>)</li>
+<li>Account for censoring and truncation in COM-Poisson <code><a href="../reference/log_lik.brmsfit.html">log_lik()</a></code>. (<a href="https://github.com/paul-buerkner/brms/issues/1938" class="external-link">#1938</a>)</li>
+<li>Fix COM-Poisson CDF vectorization and support boundaries. (<a href="https://github.com/paul-buerkner/brms/issues/1938" class="external-link">#1938</a>)</li>
+<li>Return <code>-Inf</code> rather than <code>NaN</code> from <code>log_sum_exp()</code> when both arguments are <code>-Inf</code>, matching Stan. This also affects <code><a href="../reference/brmsformula-helpers.html">nlf()</a></code> formulas that call it. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1899" class="external-link">#1899</a>)</li>
+<li>Evaluate the cdf and survival function of <code>frechet</code>, <code>gen_extreme_value</code>, <code>discrete_weibull</code>, <code>asym_laplace</code>, <code>inverse.gaussian</code>, <code>exgaussian</code> and the zero-inflated and hurdle families on the log scale, so that truncated <code>log_lik</code> reaches them too. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1899" class="external-link">#1899</a>)</li>
+<li>Preserve the matrix structure of factors in <code>newdata</code>, which is required for matrix predictors of smooth terms such as <code>mrf</code>. Thanks to Sebastian Weber. (<a href="https://github.com/paul-buerkner/brms/issues/1935" class="external-link">#1935</a>)</li>
+<li>Stop rounding <code>posterior_predict</code> output to integers for discrete models unless <code>output</code> is <code>"random"</code>, which collapsed probabilities and densities to 0 or 1. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1923" class="external-link">#1923</a>)</li>
 <li>Include the lower bound in <code>posterior_predict</code> outputs <code>"probability"</code>, <code>"pit"</code>, <code>"density"</code> and <code>"quantile"</code> for truncated discrete models, matching the other post-processing methods. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1923" class="external-link">#1923</a>)</li>
 <li>Include the lower bound when computing <code>posterior_epred</code> for truncated discrete models, matching the generated Stan code and <code>log_lik</code>. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1923" class="external-link">#1923</a>)</li>
 <li>Normalize truncated <code>log_lik</code> by <code>P(lb &lt;= Y &lt;= ub)</code> for integer responses, matching the generated Stan code, so that <code>loo</code> and <code>waic</code> agree with the model that was fitted. Thanks to Ahmed Eldeeb. (<a href="https://github.com/paul-buerkner/brms/issues/1903" class="external-link">#1903</a>)</li>
@@ -94,6 +106,7 @@
 <li>Make <code><a href="../reference/read_csv_as_stanfit.html">read_csv_as_stanfit()</a></code> store <code>adapt_delta</code> and <code>max_treedepth</code> values in <code>$control</code> so rstan can find these values. Thanks to Tristan Mahr (<a href="https://github.com/paul-buerkner/brms/issues/1767" class="external-link">#1767</a>).</li>
 <li>Enable updating argument <code>data2</code> for <code>brmsfit_multiple</code> objects. (<a href="https://github.com/paul-buerkner/brms/issues/1776" class="external-link">#1776</a>)</li>
 <li>Restore the mode parameterization of the <code>com_poisson</code> family on the Stan side, which had switched to the classical parameterization in <a href="https://github.com/paul-buerkner/brms/issues/1765" class="external-link">#1765</a> while the R-side density functions did not, so that R-side post-processing no longer disagrees with the sampled density whenever <code>shape != 1</code>. Also correct the condition selecting the asymptotic normalizing constant, which was left unchanged by that switch and so no longer described the intended region. Models fitted with <code>com_poisson</code> and <code>shape != 1</code> using affected versions were sampled under the classical parameterization and should be refitted. (<a href="https://github.com/paul-buerkner/brms/issues/1927" class="external-link">#1927</a>)</li>
+<li>Compare magnitudes when skipping unrelated levels in <code>gr(..., cov = M)</code> terms with correlated coefficients, so that negative entries of the covariance matrix’s Cholesky factor are no longer silently discarded. This affected multivariate and random-slope models using genomic or pedigree relationship matrices. (<a href="https://github.com/paul-buerkner/brms/issues/1939" class="external-link">#1939</a>)</li>
 <li>Fix several other minor bugs.</li>
 </ul></div>
 <div class="section level4">
@@ -101,6 +114,7 @@
 <ul><li>Improve sampling efficiency of <code>beta_binomial</code> models. (<a href="https://github.com/paul-buerkner/brms/issues/1703" class="external-link">#1703</a>)</li>
 <li>Improve efficiency of non-factorizable log-likelihoods for Student-t models thanks to Seth Axen. (<a href="https://github.com/paul-buerkner/brms/issues/1820" class="external-link">#1820</a>)</li>
 <li>Improve documentation in several places.</li>
+<li>Support the upcoming CmdStanR 1.0 release.</li>
 </ul></div>
 </div>
     <div class="section level2">

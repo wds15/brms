@@ -67,12 +67,12 @@ fit2 <- brm(CRIME ~ INC + HOVAL, data = COL.OLD,
 #> Compiling Stan program...
 #> Start sampling
 summary(fit2)
-#> 0.97      0.39    -1.75    -0.23 1.00     1734     1159
-#> HOVAL        -0.30      0.09    -0.48    -0.12 1.00     2269     1681
+#> 0.95      0.38    -1.78    -0.25 1.00     1032      971
+#> HOVAL        -0.30      0.10    -0.49    -0.11 1.00     1391     1406
 #> 
 #> Further Distributional Parameters:
 #>       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> sigma    10.33      1.11     8.39    12.69 1.00     1965     1426
+#> sigma    10.39      1.18     8.40    12.99 1.00     1697     1431
 #> 
 #> Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 #> and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -83,15 +83,15 @@ summary(fit2)
 #> Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 1: 
-#> Chain 1:  Elapsed Time: 0.548 seconds (Warm-up)
-#> Chain 1:                0.328 seconds (Sampling)
-#> Chain 1:                0.876 seconds (Total)
+#> Chain 1:  Elapsed Time: 0.498 seconds (Warm-up)
+#> Chain 1:                0.346 seconds (Sampling)
+#> Chain 1:                0.844 seconds (Total)
 #> Chain 1: 
 #> Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 2: 
-#> Chain 2:  Elapsed Time: 0.52 seconds (Warm-up)
-#> Chain 2:                0.328 seconds (Sampling)
-#> Chain 2:                0.848 seconds (Total)
+#> Chain 2:  Elapsed Time: 0.485 seconds (Warm-up)
+#> Chain 2:                0.359 seconds (Sampling)
+#> Chain 2:                0.844 seconds (Total)
 #> Chain 2: 
 plot(fit2)
 
