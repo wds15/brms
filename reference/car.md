@@ -86,8 +86,8 @@ fit <- brm(y | trials(size) ~ x1 + x2 + car(W, gr = g),
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 #> Chain 1: 
-#> Chain 1: Gradient evaluation took 7.8e-05 seconds
-#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.78 seconds.
+#> Chain 1: Gradient evaluation took 5.4e-05 seconds
+#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.54 seconds.
 #> Chain 1: Adjust your expectations accordingly!
 #> Chain 1: 
 #> Chain 1: 
@@ -104,15 +104,15 @@ fit <- brm(y | trials(size) ~ x1 + x2 + car(W, gr = g),
 #> Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 1: 
-#> Chain 1:  Elapsed Time: 0.755 seconds (Warm-up)
-#> Chain 1:                0.631 seconds (Sampling)
-#> Chain 1:                1.386 seconds (Total)
+#> Chain 1:  Elapsed Time: 0.401 seconds (Warm-up)
+#> Chain 1:                0.277 seconds (Sampling)
+#> Chain 1:                0.678 seconds (Total)
 #> Chain 1: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 #> Chain 2: 
-#> Chain 2: Gradient evaluation took 4.1e-05 seconds
-#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.41 seconds.
+#> Chain 2: Gradient evaluation took 4.2e-05 seconds
+#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.42 seconds.
 #> Chain 2: Adjust your expectations accordingly!
 #> Chain 2: 
 #> Chain 2: 
@@ -129,15 +129,15 @@ fit <- brm(y | trials(size) ~ x1 + x2 + car(W, gr = g),
 #> Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 2: 
-#> Chain 2:  Elapsed Time: 0.725 seconds (Warm-up)
-#> Chain 2:                0.626 seconds (Sampling)
-#> Chain 2:                1.351 seconds (Total)
+#> Chain 2:  Elapsed Time: 0.356 seconds (Warm-up)
+#> Chain 2:                0.355 seconds (Sampling)
+#> Chain 2:                0.711 seconds (Total)
 #> Chain 2: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 #> Chain 3: 
-#> Chain 3: Gradient evaluation took 4e-05 seconds
-#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
+#> Chain 3: Gradient evaluation took 2.3e-05 seconds
+#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
 #> Chain 3: Adjust your expectations accordingly!
 #> Chain 3: 
 #> Chain 3: 
@@ -154,15 +154,15 @@ fit <- brm(y | trials(size) ~ x1 + x2 + car(W, gr = g),
 #> Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 3: 
-#> Chain 3:  Elapsed Time: 0.764 seconds (Warm-up)
-#> Chain 3:                0.611 seconds (Sampling)
-#> Chain 3:                1.375 seconds (Total)
+#> Chain 3:  Elapsed Time: 0.406 seconds (Warm-up)
+#> Chain 3:                0.332 seconds (Sampling)
+#> Chain 3:                0.738 seconds (Total)
 #> Chain 3: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 #> Chain 4: 
-#> Chain 4: Gradient evaluation took 4e-05 seconds
-#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
+#> Chain 4: Gradient evaluation took 2.3e-05 seconds
+#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
 #> Chain 4: Adjust your expectations accordingly!
 #> Chain 4: 
 #> Chain 4: 
@@ -179,11 +179,11 @@ fit <- brm(y | trials(size) ~ x1 + x2 + car(W, gr = g),
 #> Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 4: 
-#> Chain 4:  Elapsed Time: 0.738 seconds (Warm-up)
-#> Chain 4:                0.613 seconds (Sampling)
-#> Chain 4:                1.351 seconds (Total)
+#> Chain 4:  Elapsed Time: 0.382 seconds (Warm-up)
+#> Chain 4:                0.289 seconds (Sampling)
+#> Chain 4:                0.671 seconds (Total)
 #> Chain 4: 
-#> Warning: The largest R-hat is 1.15, indicating chains have not mixed.
+#> Warning: The largest R-hat is 1.06, indicating chains have not mixed.
 #> Running the chains for more iterations may help. See
 #> https://mc-stan.org/misc/warnings.html#r-hat
 #> Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
@@ -203,14 +203,14 @@ summary(fit)
 #> 
 #> Correlation Structures:
 #>       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> car       0.95      0.05     0.81     1.00 1.11       24       21
-#> sdcar     0.48      0.08     0.34     0.66 1.00      653     1260
+#> car       0.98      0.02     0.92     1.00 1.02      159      420
+#> sdcar     0.50      0.08     0.36     0.67 1.01      674     1145
 #> 
 #> Regression Coefficients:
 #>           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> Intercept    -0.47      0.46    -0.99     0.92 1.15       20       19
-#> x1            0.91      0.06     0.79     1.03 1.00     1818     2410
-#> x2            0.92      0.05     0.83     1.01 1.00     2354     2709
+#> Intercept     0.09      0.29    -0.62     0.59 1.06       49       86
+#> x1            0.97      0.05     0.87     1.08 1.00     1345     1964
+#> x2            1.06      0.05     0.97     1.16 1.00     1521     2456
 #> 
 #> Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 #> and Tail_ESS are effective sample size measures, and Rhat is the potential

@@ -62,8 +62,8 @@ fit <- brm(rating ~ treat + period + carry + (1|subject),
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 #> Chain 1: 
-#> Chain 1: Gradient evaluation took 0.000325 seconds
-#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 3.25 seconds.
+#> Chain 1: Gradient evaluation took 0.000169 seconds
+#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.69 seconds.
 #> Chain 1: Adjust your expectations accordingly!
 #> Chain 1: 
 #> Chain 1: 
@@ -80,15 +80,15 @@ fit <- brm(rating ~ treat + period + carry + (1|subject),
 #> Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 1: 
-#> Chain 1:  Elapsed Time: 5.376 seconds (Warm-up)
-#> Chain 1:                3.865 seconds (Sampling)
-#> Chain 1:                9.241 seconds (Total)
+#> Chain 1:  Elapsed Time: 2.415 seconds (Warm-up)
+#> Chain 1:                1.639 seconds (Sampling)
+#> Chain 1:                4.054 seconds (Total)
 #> Chain 1: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 #> Chain 2: 
-#> Chain 2: Gradient evaluation took 0.000337 seconds
-#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 3.37 seconds.
+#> Chain 2: Gradient evaluation took 0.000102 seconds
+#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.02 seconds.
 #> Chain 2: Adjust your expectations accordingly!
 #> Chain 2: 
 #> Chain 2: 
@@ -105,15 +105,15 @@ fit <- brm(rating ~ treat + period + carry + (1|subject),
 #> Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 2: 
-#> Chain 2:  Elapsed Time: 5.553 seconds (Warm-up)
-#> Chain 2:                3.883 seconds (Sampling)
-#> Chain 2:                9.436 seconds (Total)
+#> Chain 2:  Elapsed Time: 2.379 seconds (Warm-up)
+#> Chain 2:                1.641 seconds (Sampling)
+#> Chain 2:                4.02 seconds (Total)
 #> Chain 2: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 #> Chain 3: 
-#> Chain 3: Gradient evaluation took 0.000234 seconds
-#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 2.34 seconds.
+#> Chain 3: Gradient evaluation took 0.000102 seconds
+#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 1.02 seconds.
 #> Chain 3: Adjust your expectations accordingly!
 #> Chain 3: 
 #> Chain 3: 
@@ -130,15 +130,15 @@ fit <- brm(rating ~ treat + period + carry + (1|subject),
 #> Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 3: 
-#> Chain 3:  Elapsed Time: 5.47 seconds (Warm-up)
-#> Chain 3:                3.863 seconds (Sampling)
-#> Chain 3:                9.333 seconds (Total)
+#> Chain 3:  Elapsed Time: 2.306 seconds (Warm-up)
+#> Chain 3:                1.703 seconds (Sampling)
+#> Chain 3:                4.009 seconds (Total)
 #> Chain 3: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 #> Chain 4: 
-#> Chain 4: Gradient evaluation took 0.000241 seconds
-#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 2.41 seconds.
+#> Chain 4: Gradient evaluation took 0.000104 seconds
+#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 1.04 seconds.
 #> Chain 4: Adjust your expectations accordingly!
 #> Chain 4: 
 #> Chain 4: 
@@ -155,31 +155,31 @@ fit <- brm(rating ~ treat + period + carry + (1|subject),
 #> Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 4: 
-#> Chain 4:  Elapsed Time: 5.552 seconds (Warm-up)
-#> Chain 4:                3.863 seconds (Sampling)
-#> Chain 4:                9.415 seconds (Total)
+#> Chain 4:  Elapsed Time: 2.458 seconds (Warm-up)
+#> Chain 4:                1.722 seconds (Sampling)
+#> Chain 4:                4.18 seconds (Total)
 #> Chain 4: 
 
 # extract all prior draws
 draws1 <- prior_draws(fit)
 head(draws1)
-#>    Intercept           b  sd_subject
-#> 1 -0.6914414  1.03966220  0.04305431
-#> 2  0.4100858 -1.30219209  0.88032498
-#> 3 -0.6499643 -4.22614007  4.23688415
-#> 4  1.3236922 -2.28570696  3.99322064
-#> 5  5.6541591 -0.09990052 14.30585129
-#> 6 -8.0518432  3.43212761  3.95786077
+#>     Intercept          b sd_subject
+#> 1 -1.35531055 -0.1634662 4.38680108
+#> 2  6.11221234 -0.8647021 0.21308575
+#> 3 -0.64661657  0.9785515 1.64502286
+#> 4 -0.09731442 -3.7522435 1.83202901
+#> 5  3.42443725 -1.8315452 0.08090179
+#> 6  0.63557765  1.0059848 7.77398722
 
 # extract prior draws for the coefficient of 'treat'
 draws2 <- prior_draws(fit, "b_treat")
 head(draws2)
-#>      b_treat
-#> 1 -2.1192972
-#> 2  1.5051579
-#> 3 -0.5706313
-#> 4 -4.8309096
-#> 5  6.7716104
-#> 6 -0.6459806
+#>        b_treat
+#> 1 -0.176288413
+#> 2  0.062644210
+#> 3 -0.002759337
+#> 4 -1.655377966
+#> 5  0.010968957
+#> 6  0.048936326
 # }
 ```

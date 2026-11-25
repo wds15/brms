@@ -39,9 +39,9 @@ fit <- brm(count ~ zAge + zBase * Trt + (1|patient),
            data = epilepsy, family = poisson(),
            chains = 2, cores = 2, opencl = opencl(c(0, 0)),
            backend = "cmdstanr")
-#> /usr/bin/ld: cannot find -lOpenCL: No such file or directory
+#> /usr/bin/x86_64-linux-gnu-ld.bfd: cannot find -lOpenCL: No such file or directory
 #> collect2: error: ld returned 1 exit status
-#> make: *** [make/program:88: /tmp/Rtmp1vO5Nc/model-254b7c01689b] Error 1
+#> make: *** [make/program:88: /tmp/Rtmpa8eBYY/model-24e275832db3] Error 1
 #> Error: An error occured during compilation! See the message above for more information.
 summary(fit)
 #> Error: object 'fit' not found

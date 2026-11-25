@@ -62,8 +62,8 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 #> Chain 1: 
-#> Chain 1: Gradient evaluation took 5.2e-05 seconds
-#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.52 seconds.
+#> Chain 1: Gradient evaluation took 3.8e-05 seconds
+#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.38 seconds.
 #> Chain 1: Adjust your expectations accordingly!
 #> Chain 1: 
 #> Chain 1: 
@@ -80,15 +80,15 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 1: 
-#> Chain 1:  Elapsed Time: 1.982 seconds (Warm-up)
-#> Chain 1:                1.956 seconds (Sampling)
-#> Chain 1:                3.938 seconds (Total)
+#> Chain 1:  Elapsed Time: 0.951 seconds (Warm-up)
+#> Chain 1:                0.732 seconds (Sampling)
+#> Chain 1:                1.683 seconds (Total)
 #> Chain 1: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 #> Chain 2: 
-#> Chain 2: Gradient evaluation took 2.6e-05 seconds
-#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.26 seconds.
+#> Chain 2: Gradient evaluation took 2.1e-05 seconds
+#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.21 seconds.
 #> Chain 2: Adjust your expectations accordingly!
 #> Chain 2: 
 #> Chain 2: 
@@ -105,15 +105,15 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 2: 
-#> Chain 2:  Elapsed Time: 2.082 seconds (Warm-up)
-#> Chain 2:                1.447 seconds (Sampling)
-#> Chain 2:                3.529 seconds (Total)
+#> Chain 2:  Elapsed Time: 1.065 seconds (Warm-up)
+#> Chain 2:                0.731 seconds (Sampling)
+#> Chain 2:                1.796 seconds (Total)
 #> Chain 2: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 #> Chain 3: 
-#> Chain 3: Gradient evaluation took 2.6e-05 seconds
-#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.26 seconds.
+#> Chain 3: Gradient evaluation took 1.6e-05 seconds
+#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
 #> Chain 3: Adjust your expectations accordingly!
 #> Chain 3: 
 #> Chain 3: 
@@ -130,15 +130,15 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 3: 
-#> Chain 3:  Elapsed Time: 2.097 seconds (Warm-up)
-#> Chain 3:                1.506 seconds (Sampling)
-#> Chain 3:                3.603 seconds (Total)
+#> Chain 3:  Elapsed Time: 1.038 seconds (Warm-up)
+#> Chain 3:                0.759 seconds (Sampling)
+#> Chain 3:                1.797 seconds (Total)
 #> Chain 3: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 #> Chain 4: 
-#> Chain 4: Gradient evaluation took 2.7e-05 seconds
-#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+#> Chain 4: Gradient evaluation took 1.6e-05 seconds
+#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
 #> Chain 4: Adjust your expectations accordingly!
 #> Chain 4: 
 #> Chain 4: 
@@ -155,9 +155,9 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 4: 
-#> Chain 4:  Elapsed Time: 2.021 seconds (Warm-up)
-#> Chain 4:                1.524 seconds (Sampling)
-#> Chain 4:                3.545 seconds (Total)
+#> Chain 4:  Elapsed Time: 1.011 seconds (Warm-up)
+#> Chain 4:                0.741 seconds (Sampling)
+#> Chain 4:                1.752 seconds (Total)
 #> Chain 4: 
 
 # perform k-fold cross validation
@@ -182,20 +182,20 @@ fit <- brm(count ~ zBase * Trt + (1|patient),
 #> Start sampling
 #> Fitting model 10 out of 10
 #> Start sampling
-#> Warning: Found 4 observations with a pareto_k > 0.666666666666667 in model 'fit'.
+#> Warning: Found 3 observations with a pareto_k > 0.666666666666667 in model 'fit'.
 #> 
 #> Based on 10-fold cross-validation.
 #> 
 #>            Estimate   SE
-#> elpd_kfold   -653.2 33.8
-#> p_kfold        75.5 13.5
-#> kfoldic      1306.4 67.6
+#> elpd_kfold   -650.0 31.2
+#> p_kfold        72.6 11.0
+#> kfoldic      1300.1 62.5
 #> ------
 #> 
 #> Pareto k diagnostic values:
 #>                           Count Pct.    Min. ESS
-#> (-Inf, 0.67]   (good)     232   98.3%   290     
-#>    (0.67, 1]   (bad)        3    1.3%   <NA>    
+#> (-Inf, 0.67]   (good)     233   98.7%   303     
+#>    (0.67, 1]   (bad)        2    0.8%   <NA>    
 #>     (1, Inf)   (very bad)   1    0.4%   <NA>    
 #> See help('pareto-k-diagnostic') for details.
 
@@ -208,6 +208,6 @@ rmse <- function(y, yrep) {
 # predict responses and evaluate the loss
 kfp <- kfold_predict(kf)
 rmse(y = kfp$y, yrep = kfp$yrep)
-#> [1] 6.240098
+#> [1] 6.23803
 # }
 ```

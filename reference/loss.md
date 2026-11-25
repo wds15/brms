@@ -56,18 +56,9 @@ fit_loss <- brm(
 #> Start sampling
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-#> Chain 1: Rejecting initial value:
-#> Chain 1:   Error evaluating the log probability at the initial value.
-#> Chain 1: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
-#> Chain 1: Rejecting initial value:
-#> Chain 1:   Error evaluating the log probability at the initial value.
-#> Chain 1: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
-#> Chain 1: Rejecting initial value:
-#> Chain 1:   Error evaluating the log probability at the initial value.
-#> Chain 1: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
 #> Chain 1: 
-#> Chain 1: Gradient evaluation took 5e-05 seconds
-#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.5 seconds.
+#> Chain 1: Gradient evaluation took 2.8e-05 seconds
+#> Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.28 seconds.
 #> Chain 1: Adjust your expectations accordingly!
 #> Chain 1: 
 #> Chain 1: 
@@ -84,15 +75,18 @@ fit_loss <- brm(
 #> Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 1: 
-#> Chain 1:  Elapsed Time: 2.516 seconds (Warm-up)
-#> Chain 1:                1.322 seconds (Sampling)
-#> Chain 1:                3.838 seconds (Total)
+#> Chain 1:  Elapsed Time: 0.963 seconds (Warm-up)
+#> Chain 1:                0.512 seconds (Sampling)
+#> Chain 1:                1.475 seconds (Total)
 #> Chain 1: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+#> Chain 2: Rejecting initial value:
+#> Chain 2:   Error evaluating the log probability at the initial value.
+#> Chain 2: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
 #> Chain 2: 
-#> Chain 2: Gradient evaluation took 2.6e-05 seconds
-#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.26 seconds.
+#> Chain 2: Gradient evaluation took 1.6e-05 seconds
+#> Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
 #> Chain 2: Adjust your expectations accordingly!
 #> Chain 2: 
 #> Chain 2: 
@@ -109,15 +103,21 @@ fit_loss <- brm(
 #> Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 2: 
-#> Chain 2:  Elapsed Time: 2.278 seconds (Warm-up)
-#> Chain 2:                1.236 seconds (Sampling)
-#> Chain 2:                3.514 seconds (Total)
+#> Chain 2:  Elapsed Time: 0.987 seconds (Warm-up)
+#> Chain 2:                0.528 seconds (Sampling)
+#> Chain 2:                1.515 seconds (Total)
 #> Chain 2: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+#> Chain 3: Rejecting initial value:
+#> Chain 3:   Error evaluating the log probability at the initial value.
+#> Chain 3: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
+#> Chain 3: Rejecting initial value:
+#> Chain 3:   Error evaluating the log probability at the initial value.
+#> Chain 3: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
 #> Chain 3: 
-#> Chain 3: Gradient evaluation took 2.5e-05 seconds
-#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.25 seconds.
+#> Chain 3: Gradient evaluation took 1.3e-05 seconds
+#> Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
 #> Chain 3: Adjust your expectations accordingly!
 #> Chain 3: 
 #> Chain 3: 
@@ -134,15 +134,21 @@ fit_loss <- brm(
 #> Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 3: 
-#> Chain 3:  Elapsed Time: 2.226 seconds (Warm-up)
-#> Chain 3:                1.067 seconds (Sampling)
-#> Chain 3:                3.293 seconds (Total)
+#> Chain 3:  Elapsed Time: 0.933 seconds (Warm-up)
+#> Chain 3:                0.438 seconds (Sampling)
+#> Chain 3:                1.371 seconds (Total)
 #> Chain 3: 
 #> 
 #> SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+#> Chain 4: Rejecting initial value:
+#> Chain 4:   Error evaluating the log probability at the initial value.
+#> Chain 4: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
+#> Chain 4: Rejecting initial value:
+#> Chain 4:   Error evaluating the log probability at the initial value.
+#> Chain 4: Exception: normal_lpdf: Location parameter[1] is nan, but must be finite! (in 'anon_model', line 68, column 4 to column 41)
 #> Chain 4: 
-#> Chain 4: Gradient evaluation took 2.6e-05 seconds
-#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.26 seconds.
+#> Chain 4: Gradient evaluation took 1.3e-05 seconds
+#> Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
 #> Chain 4: Adjust your expectations accordingly!
 #> Chain 4: 
 #> Chain 4: 
@@ -159,9 +165,9 @@ fit_loss <- brm(
 #> Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #> Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 #> Chain 4: 
-#> Chain 4:  Elapsed Time: 2.179 seconds (Warm-up)
-#> Chain 4:                1.072 seconds (Sampling)
-#> Chain 4:                3.251 seconds (Total)
+#> Chain 4:  Elapsed Time: 1.047 seconds (Warm-up)
+#> Chain 4:                0.564 seconds (Sampling)
+#> Chain 4:                1.611 seconds (Total)
 #> Chain 4: 
 
 # basic summaries
@@ -179,17 +185,17 @@ summary(fit_loss)
 #> Multilevel Hyperparameters:
 #> ~AY (Number of levels: 10) 
 #>                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> sd(ult_Intercept)   748.89    226.18   428.51  1300.23 1.00     1238     2077
+#> sd(ult_Intercept)   732.58    222.78   433.87  1284.77 1.00     1162     2052
 #> 
 #> Regression Coefficients:
 #>                 Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> ult_Intercept    5300.41    293.12  4751.61  5914.11 1.00     1067     1625
-#> omega_Intercept     1.34      0.05     1.23     1.43 1.00     2179     1890
-#> theta_Intercept    46.20      2.19    42.42    51.09 1.00     2203     1928
+#> ult_Intercept    5300.74    294.32  4742.62  5905.04 1.00     1062     1757
+#> omega_Intercept     1.34      0.05     1.24     1.44 1.00     2324     2280
+#> theta_Intercept    46.24      2.18    42.39    50.92 1.00     2083     2139
 #> 
 #> Further Distributional Parameters:
 #>       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-#> sigma   140.05     15.89   112.82   174.55 1.00     2820     2622
+#> sigma   140.41     15.94   113.81   176.04 1.00     2569     2446
 #> 
 #> Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 #> and Tail_ESS are effective sample size measures, and Rhat is the potential
